@@ -1,0 +1,10 @@
+FROM debian:13-slim
+RUN apt-get update && apt-get install -y --no-install-recommends \
+      freerdp3-x11 xvfb x11vnc imagemagick x11-utils \
+      python3 python3-xlib procps iproute2 \
+    && ln -s /usr/bin/xfreerdp3 /usr/local/bin/xfreerdp \
+    && rm -rf /var/lib/apt/lists/*
+WORKDIR /opt/rdp-agent
+COPY scripts/ /opt/rdp-agent/scripts/
+COPY SKILL.md AGENTS.md /opt/rdp-agent/
+ENTRYPOINT ["python3", "/opt/rdp-agent/scripts/rdpctl.py"]
