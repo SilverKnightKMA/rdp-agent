@@ -338,7 +338,7 @@ def launch_client(conf, sd, st, timeout=45):
     target = f"{conf['RDP_HOST']}:{conf['RDP_PORT']}"
     rdp_cmd = [
         "xfreerdp", f"/v:{target}", f"/u:{conf['RDP_USER']}",
-        f"/size:{conf['RDP_GEOMETRY']}", "/from-stdin", "/cert:ignore",
+        f"/size:{conf['RDP_GEOMETRY']}", "/from-stdin:force", "/cert:ignore",
         "+clipboard", "+auto-reconnect", "/auto-reconnect-max-retries:5",
         "/compression", "/bpp:24", "/log-level:INFO",
     ]
