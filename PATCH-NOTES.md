@@ -66,6 +66,7 @@ Drift mới tìm thấy:
 - **`move` không tới Windows** (xem bảng): muốn cuộn/hover thì định vị con trỏ bằng `click` trước; tooltip/menu hover không làm được bằng `move`.
 - **M3 đọc chữ Việt cỡ nhỏ không ổn định với dấu chồng** (`ậ ế ệ ộ ữ`): cùng một từ `đặng` cho 4 kết quả khác nhau (đáng / đẳng / dấu / tầng) ở ảnh gốc lẫn khi zoom `-resize`. Kiểm text đã gõ thì đọc lại bằng clipboard (Ctrl+A/Ctrl+C → đọc X CLIPBOARD), đừng tin OCR. Crop đưa M3 đọc phải ~dưới 1300px chiều dài (crop 2700x102 bị đọc tệ hơn ảnh gốc).
 - M3 trả lời "cửa sổ nào đang active" bằng cảm tính (to hơn = active), sai; focus phải kiểm bằng hiệu quả hành động (alt+F4 đóng đúng cửa sổ, chữ gõ vào đúng ô).
+- **Bài học suýt nguy hiểm**: Notepad mở lại ở vị trí cũ (nửa phải [681,186,1916,793]), click (600,400) rơi ra desktop → mất focus → paste/scroll vô hiệu, **Alt+F4 trên desktop = hộp thoại "Shut Down Windows"** (Enter là tắt máy). Đã huy bằng Escape, không có gì xẩy ra. Luật cho loop: trước `alt+F4` phải chắc cửa sổ đích có focus (click TRONG toạ độ cửa sổ vừa chụp, hoặc alt+Tab rồi kiểm bằng diff); khoáфе có focus KHÔNG Alt+F4.
 
 Dọn dẹp: Notepad đóng không lưu, Calculator đóng, desktop trống như ban đầu; jiggler **tắt** (`keepalive off`); phiên `rdp-session` vẫn UP chờ user quyết.
 
